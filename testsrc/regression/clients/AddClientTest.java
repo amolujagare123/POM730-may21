@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pages.Clients.AddClient;
 import pages.Login;
 import pages.Menu;
 
@@ -36,6 +37,28 @@ public class AddClientTest {
     {
         Menu menu = new Menu(driver);
         menu.clickAddClient();
+
+        AddClient addClient = new AddClient(driver);
+
+        addClient.setClientName("Akshay123");
+        addClient.setClientSurname("Yadav");
+        addClient.setlanguage("English");
+        addClient.setClientAdd1("xyz");
+        addClient.setClientAdd2("pqr");
+        addClient.setClientCity("Pune");
+        addClient.setClientState("MH");
+        addClient.setClientZip("7887878");
+        addClient.setCountry("Hungary");
+        addClient.setGender("Male");
+        addClient.setClientPhone("898989");
+        addClient.setClientFax("787878");
+        addClient.setClientMobile("7878");
+        addClient.setClientEmail("a@b.com");
+        addClient.setClientWeb("www.xyz.com");
+        addClient.setClientVat("8989");
+        addClient.setClientTax("8989");
+        addClient.clickBtnSave();
+
     }
 
 
