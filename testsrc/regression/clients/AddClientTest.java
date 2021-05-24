@@ -40,6 +40,7 @@ public class AddClientTest {
 
         AddClient addClient = new AddClient(driver);
 
+
         addClient.setClientName("Akshay123");
         addClient.setClientSurname("Yadav");
         addClient.setlanguage("English");
@@ -50,6 +51,7 @@ public class AddClientTest {
         addClient.setClientZip("7887878");
         addClient.setCountry("Hungary");
         addClient.setGender("Male");
+        addClient.setBirthDate("02/21/1990"); // MM/dd/yyyy
         addClient.setClientPhone("898989");
         addClient.setClientFax("787878");
         addClient.setClientMobile("7878");
