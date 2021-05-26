@@ -14,9 +14,10 @@ import pages.Menu;
 
 import java.io.IOException;
 import java.sql.*;
+import java.text.ParseException;
 import java.util.ArrayList;
 
-import static util.Conversion.convertGender;
+import static util.Conversion.*;
 import static utility.ConfigReader.*;
 import static utility.MyDataProvider.getTheData;
 
@@ -46,7 +47,7 @@ public class AddClientTestDataProvider {
    String gender,String birthdate,String phone,String fax,
    String mobile,String email,String web,String vat,String tax
 
-    ) throws ClassNotFoundException, SQLException {
+    ) throws ClassNotFoundException, SQLException, ParseException {
 
         ArrayList<String> expected = new ArrayList<>();
 
@@ -122,13 +123,15 @@ public class AddClientTestDataProvider {
             actual.add(rs.getString("client_city"));
             actual.add(rs.getString("client_state"));
             actual.add(rs.getString("client_zip"));
-            actual.add(rs.getString("client_country"));
 
+
+            actual.add(convertCountry(rs.getString("client_country")));
 
             actual.add(convertGender(rs.getString("client_gender")));
 
+            actual.add(convertDate(rs.getString("client_birthdate")));
 
-            actual.add(rs.getString("client_birthdate"));
+
             actual.add(rs.getString("client_phone"));
             actual.add(rs.getString("client_fax"));
             actual.add(rs.getString("client_mobile"));
